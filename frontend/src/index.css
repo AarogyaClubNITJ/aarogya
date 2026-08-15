@@ -1,0 +1,85 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+  html{
+    scroll-behavior: smooth;;
+  }
+
+body{
+  user-select: none;  
+} 
+
+#stroke{
+  color: white;
+  -webkit-text-stroke: 5px #406ED5;
+  paint-order: stroke fill;
+}
+
+#stroke1{
+  color: white;
+  -webkit-text-stroke: 2px gray;
+  paint-order: stroke fill;
+}
+
+#whatwedo,#whatwedo1,#whatwedo2 {
+  overflow: hidden;
+}
+
+#whatwedo::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./assets/whatwedo/healthworkshop.jpeg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+#whatwedo1::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./assets/whatwedo/healthcamp.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+#whatwedo2::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./assets/whatwedo/marathon.webp);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#whatwedo:hover::after,#whatwedo1:hover::after,#whatwedo2:hover::after {
+  opacity: 1;
+}
+
+#floating{
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
