@@ -9,6 +9,10 @@ import Quiz from './components/Quiz'
 import LaunchScreen from './components/LaunchScreen'
 import { AuthProvider } from './context/AuthContext'
 import VisitCounter from './components/counter'
+import AdminLogin from './quizorientation/AdminLogin'
+import DisplayScreen from './quizorientation/DisplayScreen'
+import OrientationJoin from './quizorientation/OrientationJoin'
+import ActiveQuiz from './quizorientation/ActiveQuiz'
 
 
 const router=createBrowserRouter(
@@ -59,6 +63,22 @@ const router=createBrowserRouter(
         <Navbar/>
         <Quiz/>
       </div>
+    },
+    {
+      path:"/orientation/admin",
+      element: <AdminLogin/>
+    },
+    {
+      path:"/orientation/display",
+      element: <DisplayScreen/>
+    },
+    {
+      path:"/orientation/join",
+      element: <OrientationJoin/>
+    },
+    {
+      path:"/orientation/play",
+      element: <ActiveQuiz/>
     }
   ]
 )
