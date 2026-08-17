@@ -18,7 +18,8 @@ const Gallery = () => {
 
   const fetchGallery = async () => {
     try {
-      const response = await fetch('https://admin-aarogya-3wmj8.ondigitalocean.app/getusers');
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/getusers`);
       const data = await response.json();
       setImages(data);
     } catch (error) {
