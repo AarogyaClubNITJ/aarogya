@@ -10,12 +10,28 @@ const adminRoutes = require('./routes/adminRoutes');
 const quizRoutes = require('./routes/quizRoutes');
 
 const app = express();
+app.set('trust proxy', 1); // Trust first proxy (Render)
 const server = http.createServer(app);
 
 // Initialize Socket.IO
 const io = socketModule.init(server);
 
-app.use(cors());
+const corsOptions = {
+    origin: ['http://aarogya-vert.vercel.app', 'https://aarogya-vert.vercel.app', 'http://localhost:5173', 'http://localhost:5174'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+};
+app.use(cors(corsOptions));
+
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: "Too many requests from this IP, please try again after 15 minutes"
+});
+app.use(limiter);
 app.use(express.json());
 
 // Connect to MongoDB

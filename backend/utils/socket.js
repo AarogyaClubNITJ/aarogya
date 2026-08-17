@@ -5,8 +5,9 @@ module.exports = {
     const { Server } = require('socket.io');
     io = new Server(server, {
       cors: {
-        origin: '*',
-        methods: ['GET', 'POST']
+        origin: ['http://aarogya-vert.vercel.app', 'https://aarogya-vert.vercel.app', 'http://localhost:5173', 'http://localhost:5174'],
+        methods: ['GET', 'POST'],
+        credentials: true
       }
     });
     return io;
