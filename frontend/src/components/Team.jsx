@@ -37,9 +37,9 @@ const teamData = [
   },
   {
     id: 22,
-    name: "Dipesh Kumar",
+    name: "Dipesh Rewar",
     position: "Technical Head",
-    profilePic: "ajay-min.png",
+    profilePic: "dipesh.jpg",
   },
   {
     id: 11,
@@ -89,7 +89,7 @@ const teamData = [
     id: 32,
     name: "Harshita",
     position: "Outreach Head",
-    profilePic: "souravsharma-min.jpeg",
+    profilePic: "harshita.jpeg",
   },
   {
     id: 33,
@@ -165,7 +165,7 @@ const teamData = [
     id: 36,
     name: "Diya Joshi",
     position: "Design Lead",
-    profilePic: "DIYAJOSH.jpeg",
+    profilePic: "diya.png",
   },
   {
     id: 16,
