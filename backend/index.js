@@ -3,11 +3,12 @@ const http = require('http');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-
+const cloudinary = require("./cloudinary");
 const socketModule = require('./utils/socket');
 const gameState = require('./utils/gameState');
 const adminRoutes = require('./routes/adminRoutes');
 const quizRoutes = require('./routes/quizRoutes');
+const galleryRoutes = require('./routes/galleryRoutes');
 
 const app = express();
 app.set('trust proxy', 1); // Trust first proxy (Render)
@@ -43,6 +44,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/orientation
 // Routes
 app.use('/api/admin', adminRoutes); // adminRoutes has /login and /qr/generate
 app.use('/api/quiz', quizRoutes);
+app.use('/api/gallery', galleryRoutes);
 
 // Socket connection
 io.on('connection', (socket) => {
