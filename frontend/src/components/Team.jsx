@@ -95,7 +95,7 @@ const teamData = [
     id: 33,
     name: "Shivank Shukla",
     position: "Outreach Executive",
-    profilePic: "architaaggarwal-min.jpg",
+    profilePic: "shivank.jpeg",
   },
   {
     id: 9,
