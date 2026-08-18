@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const OrientationJoin = () => {
   const [searchParams] = useSearchParams();
@@ -38,7 +39,6 @@ const OrientationJoin = () => {
       const data = await res.json();
       
       if (data.success) {
-        // Save session token and first question in state/storage
         sessionStorage.setItem('quizSession', data.sessionToken);
         sessionStorage.setItem('currentQuestion', JSON.stringify(data.question));
         navigate('/orientation/play');
@@ -52,84 +52,92 @@ const OrientationJoin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-300 flex items-center justify-center p-4 font-sans">
-      <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md relative overflow-hidden">
-        
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-bl-full opacity-10"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-500 rounded-tr-full opacity-10"></div>
+    <div className="min-h-screen bg-[#eaf8fa] flex items-center justify-center p-4 font-Basic overflow-hidden relative">
+      
+      <motion.div 
+        animate={{ y: [0, -20, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="absolute top-10 left-10 w-32 h-32 bg-[#406ED5] rounded-full blur-3xl opacity-20"
+      />
+      <motion.div 
+        animate={{ y: [0, 20, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+        className="absolute bottom-10 right-10 w-40 h-40 bg-[#4BC1E2] rounded-full blur-3xl opacity-20"
+      />
 
-        <h1 className="text-3xl lg:text-4xl font-extrabold text-blue-900 mb-2 text-center">
-          Join the Quiz!
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0, rotate: -2 }}
+        animate={{ scale: 1, opacity: 1, rotate: 0 }}
+        transition={{ type: "spring", stiffness: 100, damping: 12 }}
+        className="bg-white rounded-3xl shadow-custom border-4 border-black p-8 w-full max-w-md relative z-10"
+      >
+        <h1 
+          className="text-4xl lg:text-5xl font-black mb-2 text-center tracking-wide uppercase text-[#4BC1E2] drop-shadow-md"
+        >
+          JOIN THE QUIZ
         </h1>
-        <p className="text-gray-600 text-center mb-8 font-medium">
-          Enter your details to get started. Don't blink!
+        <p className="text-gray-700 text-center mb-8 font-bold text-lg">
+          Enter details to start. Don't blink!
         </p>
         
         {error && (
-          <div className="bg-red-100 text-red-700 p-4 rounded-xl mb-6 text-center font-semibold text-sm">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
+            className="bg-red-50 text-red-600 border-2 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] p-4 rounded-xl mb-6 text-center font-bold"
+          >
             {error}
-          </div>
+          </motion.div>
         )}
 
-        <form onSubmit={handleStart} className="space-y-5 relative z-10">
+        <form onSubmit={handleStart} className="space-y-5">
           <div>
-            <label className="block text-blue-900 font-bold mb-2">Full Name *</label>
+            <label className="block text-black font-black mb-2 text-lg uppercase tracking-wide">Full Name *</label>
             <input 
-              type="text"
-              name="name"
-              className="w-full px-4 py-3 rounded-xl bg-blue-50 border-none focus:ring-2 focus:ring-blue-500 outline-none transition font-medium"
+              type="text" name="name"
+              className="w-full px-4 py-3 rounded-xl bg-white border-2 border-black focus:outline-none focus:ring-4 focus:ring-[#4BC1E2]/40 font-bold text-black"
               placeholder="e.g. Adarsh Kumar"
-              value={formData.name}
-              onChange={handleChange}
-              required
+              value={formData.name} onChange={handleChange} required
             />
           </div>
           <div>
-            <label className="block text-blue-900 font-bold mb-2">Email Address *</label>
+            <label className="block text-black font-black mb-2 text-lg uppercase tracking-wide">Email *</label>
             <input 
-              type="email"
-              name="email"
-              className="w-full px-4 py-3 rounded-xl bg-blue-50 border-none focus:ring-2 focus:ring-blue-500 outline-none transition font-medium"
+              type="email" name="email"
+              className="w-full px-4 py-3 rounded-xl bg-white border-2 border-black focus:outline-none focus:ring-4 focus:ring-[#4BC1E2]/40 font-bold text-black"
               placeholder="e.g. adarsh@example.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
+              value={formData.email} onChange={handleChange} required
             />
           </div>
           <div>
-            <label className="block text-blue-900 font-bold mb-2">Roll Number / ID *</label>
+            <label className="block text-black font-black mb-2 text-lg uppercase tracking-wide">Roll Number *</label>
             <input 
-              type="text"
-              name="rollNo"
-              className="w-full px-4 py-3 rounded-xl bg-blue-50 border-none focus:ring-2 focus:ring-blue-500 outline-none transition font-medium"
+              type="text" name="rollNo"
+              className="w-full px-4 py-3 rounded-xl bg-white border-2 border-black focus:outline-none focus:ring-4 focus:ring-[#4BC1E2]/40 font-bold text-black"
               placeholder="e.g. 12345678"
-              value={formData.rollNo}
-              onChange={handleChange}
-              required
+              value={formData.rollNo} onChange={handleChange} required
             />
           </div>
           <div>
-            <label className="block text-blue-900 font-bold mb-2">Instagram Handle (Optional)</label>
+            <label className="block text-black font-black mb-2 text-lg uppercase tracking-wide">Instagram <span className="text-sm opacity-60">(Optional)</span></label>
             <input 
-              type="text"
-              name="instaHandle"
-              className="w-full px-4 py-3 rounded-xl bg-blue-50 border-none focus:ring-2 focus:ring-blue-500 outline-none transition font-medium"
+              type="text" name="instaHandle"
+              className="w-full px-4 py-3 rounded-xl bg-white border-2 border-black focus:outline-none focus:ring-4 focus:ring-[#4BC1E2]/40 font-bold text-black"
               placeholder="@username"
-              value={formData.instaHandle}
-              onChange={handleChange}
+              value={formData.instaHandle} onChange={handleChange}
             />
           </div>
 
-          <button 
+          <motion.button 
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98, y: 0 }}
             type="submit"
             disabled={loading}
-            className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-lg py-4 rounded-xl transition duration-200 shadow-xl hover:shadow-2xl mt-4 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+            className={`w-full bg-[#406ED5] text-white font-black tracking-widest uppercase text-xl py-4 rounded-xl border-4 border-black shadow-[6px_6px_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_rgba(0,0,0,1)] transition-all mt-4 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             {loading ? 'STARTING...' : 'START QUIZ 🚀'}
-          </button>
+          </motion.button>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };
