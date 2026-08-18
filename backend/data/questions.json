@@ -1,34 +1,551 @@
 [
   {
     "id": 1,
-    "question": "What is 2+2?",
+    "question": "The 2025 Aarogya-SWRAC marathon at NIT Jalandhar was promoted under which theme?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "6"
+      "Run for a Healthy Campus",
+      "Pace for Positivity – Leave Stress Behind",
+      "Miles for Mental Health",
+      "High on Miles, Not on Drugs"
     ],
     "answer": 1
   },
   {
     "id": 2,
-    "question": "What is the capital of France?",
+    "question": "What was the approximate participation reported for the 2025 Aarogya-SWRAC marathon?",
     "options": [
-      "Berlin",
-      "London",
-      "Paris",
-      "Madrid"
+      "230+ participants",
+      "330+ participants",
+      "430+ participants",
+      "530+ participants"
     ],
     "answer": 2
   },
   {
     "id": 3,
-    "question": "Which planet is known as the Red Planet?",
+    "question": "Aarogya's marathon initiative primarily combines physical fitness with which broader objective?",
     "options": [
-      "Venus",
+      "Academic competition",
+      "Mental and social well-being",
+      "Technical skill development",
+      "Sports recruitment"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 4,
+    "question": "Which club collaborated with Aarogya for the 2025 NITJ marathon?",
+    "options": [
+      "SWRAC",
+      "XCEED",
+      "GDSC",
+      "Kalakaar"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 5,
+    "question": "The theme of NITJ Half Marathon 2.0 was:",
+    "options": [
+      "Run Against Stress",
+      "Miles for a Better Tomorrow",
+      "High on Miles, Not on Drugs",
+      "Run, Rest, Repeat"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 6,
+    "question": "Which of the following best explains why endurance running can benefit mental well-being?",
+    "options": [
+      "It eliminates all sources of stress",
+      "It can promote mood-regulating physiological responses and provide structured activity",
+      "It guarantees better academic performance",
+      "It removes the need for adequate sleep"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 7,
+    "question": "Which vitamin deficiency can impair calcium absorption and contribute to weakened bones?",
+    "options": [
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin B1",
+      "Vitamin K2"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 8,
+    "question": "A person hyperventilates during a panic episode. Which change is most directly responsible for the dizziness that may follow?",
+    "options": [
+      "A rapid increase in blood glucose",
+      "A decrease in carbon dioxide in the blood",
+      "A sudden increase in red blood cell count",
+      "An increase in calcium absorption"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 9,
+    "question": "Which type of cholesterol is generally considered protective when present at healthy levels?",
+    "options": [
+      "LDL",
+      "HDL",
+      "VLDL",
+      "Triglyceride"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 10,
+    "question": "Why is iron deficiency particularly associated with fatigue?",
+    "options": [
+      "Iron directly produces glucose",
+      "Iron is required for hemoglobin formation and oxygen transport",
+      "Iron controls body temperature",
+      "Iron prevents muscle contraction"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 11,
+    "question": "Which blood type is generally considered the universal plasma donor?",
+    "options": [
+      "O negative",
+      "AB",
+      "A positive",
+      "B negative"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 12,
+    "question": "Why can a person with blood group O negative generally donate red blood cells to people of other ABO/Rh groups in emergencies?",
+    "options": [
+      "Their red cells lack A, B and Rh(D) antigens",
+      "Their plasma contains every antibody",
+      "Their blood has no proteins",
+      "Their red cells contain extra antibodies"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 13,
+    "question": "Which component of blood is primarily responsible for immune defense?",
+    "options": [
+      "Erythrocytes",
+      "Leukocytes",
+      "Platelets",
+      "Fibrinogen"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 14,
+    "question": "A person has a minor burn from a hot surface. What is the most appropriate immediate first-aid response?",
+    "options": [
+      "Apply ice directly for several minutes",
+      "Cool the area under cool running water",
+      "Apply toothpaste immediately",
+      "Break any blisters"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 15,
+    "question": "During a nosebleed, why is leaning slightly forward preferred over tilting the head backward?",
+    "options": [
+      "It increases blood pressure",
+      "It reduces the chance of swallowing blood",
+      "It immediately stops all bleeding",
+      "It increases oxygen absorption"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 16,
+    "question": "If an unconscious person is not breathing normally, what is the most appropriate priority?",
+    "options": [
+      "Give them water",
+      "Start appropriate emergency response and CPR while seeking help",
+      "Make them walk",
+      "Wait for them to regain consciousness"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 17,
+    "question": "Which of the following is the strongest reason not to give food or water to an unconscious person?",
+    "options": [
+      "It lowers body temperature",
+      "It may cause choking or aspiration",
+      "It increases blood pressure",
+      "It prevents recovery"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 18,
+    "question": "Which electrolyte is particularly important for normal nerve function and muscle contraction?",
+    "options": [
+      "Potassium",
+      "Iron",
+      "Iodine",
+      "Fluoride"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 19,
+    "question": "A runner finishes a long race and drinks only plain water in excessive amounts. What electrolyte-related complication can potentially occur?",
+    "options": [
+      "Hypernatremia",
+      "Hyponatremia",
+      "Hypercalcemia",
+      "Iron deficiency"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 20,
+    "question": "Which factor most directly determines the intensity of a person's physical activity?",
+    "options": [
+      "The color of their sportswear",
+      "The physiological demand placed on the body",
+      "The duration of their sleep alone",
+      "Their height"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 21,
+    "question": "Which training principle involves gradually increasing exercise difficulty as the body adapts?",
+    "options": [
+      "Overload",
+      "Isolation",
+      "Deprivation",
+      "Randomization"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 22,
+    "question": "Why is recovery important after intense physical training?",
+    "options": [
+      "Adaptation and tissue repair occur during recovery",
+      "Muscles only grow while exercising continuously",
+      "Recovery permanently increases heart rate",
+      "It eliminates the need for nutrition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 23,
+    "question": "Which of these is most likely to indicate overtraining rather than normal post-exercise fatigue?",
+    "options": [
+      "Temporary muscle soreness",
+      "Persistent fatigue, declining performance and poor recovery",
+      "Feeling hungry after exercise",
+      "Mild sweating during exercise"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 24,
+    "question": "Which energy system is predominantly used during a very short, explosive effort such as a maximal sprint lasting only a few seconds?",
+    "options": [
+      "ATP-PC system",
+      "Aerobic system",
+      "Fat oxidation system",
+      "Digestive system"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 25,
+    "question": "Which macronutrient generally provides the highest energy density per gram?",
+    "options": [
+      "Protein",
+      "Carbohydrate",
+      "Fat",
+      "Fiber"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 26,
+    "question": "Which nutrient is most directly required for muscle protein synthesis and tissue repair?",
+    "options": [
+      "Protein",
+      "Sodium",
+      "Vitamin C",
+      "Water"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 27,
+    "question": "Why are whole grains generally preferred over refined grains as a regular dietary choice?",
+    "options": [
+      "They contain no carbohydrates",
+      "They generally retain more fiber and micronutrients",
+      "They contain no calories",
+      "They are always higher in protein than meat"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 28,
+    "question": "Which index is commonly used to estimate body mass relative to height?",
+    "options": [
+      "BMI",
+      "BMR",
+      "ECG",
+      "HDL"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 29,
+    "question": "Why is BMI not considered a perfect measure of individual health or body composition?",
+    "options": [
+      "It cannot be calculated for adults",
+      "It does not distinguish muscle mass from fat mass",
+      "It directly measures blood pressure",
+      "It measures only hydration"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 30,
+    "question": "Which sleep stage is most strongly associated with memory consolidation and physical restoration?",
+    "options": [
+      "Deep non-REM sleep",
+      "Only REM sleep",
+      "Only stage 1 sleep",
+      "Awake resting state"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 31,
+    "question": "Why can caffeine consumed late in the evening interfere with sleep even if a person does not feel immediately stimulated?",
+    "options": [
+      "Caffeine blocks adenosine receptors and can have a long half-life",
+      "Caffeine instantly destroys melatonin",
+      "Caffeine permanently raises body temperature",
+      "Caffeine prevents digestion completely"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 32,
+    "question": "Which psychological phenomenon describes improved recall when information is studied over multiple spaced sessions rather than one long session?",
+    "options": [
+      "Spacing effect",
+      "Placebo effect",
+      "Halo effect",
+      "Bystander effect"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 33,
+    "question": "A student keeps switching between studying, messaging and social media. What is the main cognitive problem?",
+    "options": [
+      "Multitasking can increase switching costs and reduce focused attention",
+      "The brain processes every task equally efficiently",
+      "Switching tasks always improves memory",
+      "Social media increases deep-work capacity"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 34,
+    "question": "Which hormone is primarily associated with the body's acute stress response?",
+    "options": [
+      "Adrenaline",
+      "Melatonin",
+      "Insulin",
+      "Calcitonin"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 35,
+    "question": "Which response is generally most appropriate when a friend says they are experiencing prolonged emotional distress?",
+    "options": [
+      "Tell them to simply ignore it",
+      "Listen without judgment and encourage appropriate support",
+      "Publicly discuss their situation",
+      "Tell them that everyone has worse problems"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 36,
+    "question": "Which statement about antibiotics is correct?",
+    "options": [
+      "They are effective against most viral infections",
+      "They are primarily used against bacterial infections",
+      "They should be taken whenever someone has a cold",
+      "They permanently strengthen immunity"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 37,
+    "question": "Which organization is responsible for food safety regulation in India?",
+    "options": [
+      "FSSAI",
+      "SEBI",
+      "ISRO",
+      "BCCI"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 38,
+    "question": "Which deficiency is classically associated with scurvy?",
+    "options": [
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin B12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 39,
+    "question": "Which deficiency is most strongly associated with megaloblastic anemia due to impaired DNA synthesis?",
+    "options": [
+      "Vitamin B12",
+      "Vitamin D",
+      "Vitamin K",
+      "Vitamin E"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 40,
+    "question": "Which organ is primarily responsible for detoxification and metabolism of many drugs?",
+    "options": [
+      "Liver",
+      "Heart",
+      "Spleen",
+      "Pancreas"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 41,
+    "question": "Which organ plays the major role in maintaining fluid and electrolyte balance by filtering blood and producing urine?",
+    "options": [
+      "Kidneys",
+      "Lungs",
+      "Stomach",
+      "Thyroid"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 42,
+    "question": "Which sporting event is traditionally associated with a distance of approximately 42.195 km?",
+    "options": [
+      "Half marathon",
+      "Marathon",
+      "10K",
+      "Ultramarathon"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 43,
+    "question": "Which Indian athlete won India's first Olympic gold medal in an individual athletics event?",
+    "options": [
+      "Milkha Singh",
+      "Neeraj Chopra",
+      "Abhinav Bindra",
+      "P. T. Usha"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 44,
+    "question": "Which country is widely regarded as the birthplace of the ancient Olympic Games?",
+    "options": [
+      "Italy",
+      "Greece",
+      "France",
+      "Egypt"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 45,
+    "question": "In tennis, what does the term 'deuce' indicate?",
+    "options": [
+      "A player has won the set",
+      "Both players have reached 40 points",
+      "The first point of a game",
+      "A service fault"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 46,
+    "question": "Which Indian city hosted the 2010 Commonwealth Games?",
+    "options": [
+      "Mumbai",
+      "New Delhi",
+      "Bengaluru",
+      "Hyderabad"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 47,
+    "question": "Which planet has the shortest day, meaning the fastest rotation on its axis, among the planets in our Solar System?",
+    "options": [
+      "Earth",
       "Mars",
       "Jupiter",
-      "Saturn"
+      "Venus"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 48,
+    "question": "Which Indian classical system of medicine emphasizes concepts such as doshas and traditionally focuses on balancing body and mind?",
+    "options": [
+      "Ayurveda",
+      "Allopathy",
+      "Homeopathy",
+      "Naturopathy"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 49,
+    "question": "A student feels unusually exhausted, has dark urine after intense exercise and develops severe muscle pain. Which situation requires particular caution?",
+    "options": [
+      "Normal post-workout hunger",
+      "Possible rhabdomyolysis requiring medical evaluation",
+      "Normal thirst only",
+      "Simple vitamin C deficiency"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 50,
+    "question": "Which statement best captures the concept of holistic well-being promoted by a health and wellness initiative?",
+    "options": [
+      "Health means only being free from physical disease",
+      "Physical, mental and social well-being are interconnected",
+      "Fitness is determined only by body weight",
+      "Mental health has no relationship with physical health"
     ],
     "answer": 1
   }
