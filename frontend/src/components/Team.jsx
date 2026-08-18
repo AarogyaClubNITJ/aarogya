@@ -16,6 +16,7 @@ const teamData = [
     position: "Student Coordinator",
     profilePic: "Aman_Gautam.jpg",
   },
+
   // Outreach Team
   {
     id: 5,
@@ -69,13 +70,13 @@ const teamData = [
     id: 30,
     name: "Rahul Saini",
     position: "Outreach Head",
-    profilePic: "rahulsaini.jpg", 
+    profilePic: "rahulsaini.jpg",
   },
   {
     id: 31,
     name: "Archita ",
     position: "Outreach Head",
-    profilePic: "archita.jpeg", 
+    profilePic: "archita.jpeg",
   },
 
   // Technical Team
@@ -121,7 +122,7 @@ const teamData = [
     id: 21,
     name: "Sourav Sharma",
     position: "Management Head",
-    profilePic: "sourav.jpeg",
+    profilePic: "sourav.jpg",
   },
   {
     id: 6,
@@ -153,7 +154,7 @@ const teamData = [
     position: "Design Head",
     profilePic: "muskan.jpg",
   },
-  
+
   // Social Media Team
   {
     id: 19,
@@ -237,7 +238,7 @@ const teamData = [
     id: 31,
     name: "Tanishqa",
     position: "Content Lead",
-    profilePic: "tanishqa.jpg" 
+    profilePic: "tanishqa.jpg"
   },
   {
     id: 32,
@@ -265,24 +266,26 @@ const Team = () => {
   }
 
   function handleManagement() {
-    setSelection("Content Creation");
+    setSelection("Management");
   }
 
   function handleSocialMedia() {
-    setSelection("Social Media Team");
+    setSelection("Social Media");
   }
 
   function handleOutreach() {
-    setSelection("Outreach Team");
+    setSelection("Outreach");
   }
 
   function handleTechnical() {
-    setSelection("Technical Team");
+    setSelection("Technical");
   }
 
-  // Filter team members based on selection
-  const filteredTeam = selection 
-    ? teamData.filter(member => member.position.includes(selection))
+  // Filter team members
+  const filteredTeam = selection
+    ? teamData.filter((member) =>
+        member.position.includes(selection)
+      )
     : teamData;
 
   return (
@@ -292,62 +295,117 @@ const Team = () => {
       transition={{ duration: 0.4, delay: 0.5 }}
     >
       <div className="min-w-screen sm:mx-20 mx-5 rounded-3xl mt-10 overflow-hidden flex flex-col justify-center items-center font-Basic bg-[#fcfbfc]">
-        <p className='mt-10 bg-red-400 px-4 py-1 rounded-3xl'>We're here!</p>
-        <h2 className='text-2xl sm:text-6xl font-semibold text-green-900 mt-4 text-center'>
-          The Minds and Hands <span className="block">Shaping Aarogya Club</span>
+
+        <p className="mt-10 bg-red-400 px-4 py-1 rounded-3xl">
+          We're here!
+        </p>
+
+        <h2 className="text-2xl sm:text-6xl font-semibold text-green-900 mt-4 text-center">
+          The Minds and Hands
+          <span className="block">Shaping Aarogya Club</span>
         </h2>
-        <div className='flex gap-7 mt-7 flex-1 flex-wrap justify-center'>
-          <div 
-            className={`px-4 py-1 rounded-xl cursor-pointer ${selection === null ? 'bg-gray-400' : 'bg-gray-300 hover:bg-gray-400'}`} 
+
+        <div className="flex gap-7 mt-7 flex-1 flex-wrap justify-center">
+
+          {/* All */}
+          <div
+            className={`px-4 py-1 rounded-xl cursor-pointer ${
+              selection === null
+                ? "bg-gray-400"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
             onClick={handleAll}
           >
             All
           </div>
-          <div 
-            className={`px-4 py-1 rounded-xl cursor-pointer ${selection === "Student Coordinator" ? 'bg-gray-400' : 'bg-gray-300 hover:bg-gray-400'}`} 
+
+          {/* Coordinators */}
+          <div
+            className={`px-4 py-1 rounded-xl cursor-pointer ${
+              selection === "Student Coordinator"
+                ? "bg-gray-400"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
             onClick={handleCoordinator}
           >
             Coordinators
           </div>
-          <div 
-            className={`px-4 py-1 rounded-xl cursor-pointer ${selection === "Content Creation" ? 'bg-gray-400' : 'bg-gray-300 hover:bg-gray-400'}`} 
+
+          {/* Management */}
+          <div
+            className={`px-4 py-1 rounded-xl cursor-pointer ${
+              selection === "Management"
+                ? "bg-gray-400"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
             onClick={handleManagement}
           >
-            Content Creation
+            Management
           </div>
-          <div 
-            className={`px-4 py-1 rounded-xl cursor-pointer ${selection === "Social Media Team" ? 'bg-gray-400' : 'bg-gray-300 hover:bg-gray-400'}`} 
+
+          {/* Social Media */}
+          <div
+            className={`px-4 py-1 rounded-xl cursor-pointer ${
+              selection === "Social Media"
+                ? "bg-gray-400"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
             onClick={handleSocialMedia}
           >
             Social Media
           </div>
-          <div 
-            className={`px-4 py-1 rounded-xl cursor-pointer ${selection === "Outreach Team" ? 'bg-gray-400' : 'bg-gray-300 hover:bg-gray-400'}`} 
+
+          {/* Outreach */}
+          <div
+            className={`px-4 py-1 rounded-xl cursor-pointer ${
+              selection === "Outreach"
+                ? "bg-gray-400"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
             onClick={handleOutreach}
           >
             Outreach
           </div>
-          <div 
-            className={`px-4 py-1 rounded-xl cursor-pointer ${selection === "Technical Team" ? 'bg-gray-400' : 'bg-gray-300 hover:bg-gray-400'}`} 
+
+          {/* Technical */}
+          <div
+            className={`px-4 py-1 rounded-xl cursor-pointer ${
+              selection === "Technical"
+                ? "bg-gray-400"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
             onClick={handleTechnical}
           >
             Technical
           </div>
         </div>
-        <div className='grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-6 w-full sm:w-[75%] my-10 px-4 sm:px-0'>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-6 w-full sm:w-[75%] my-10 px-4 sm:px-0">
+
           {filteredTeam.map((team) => (
-            <div key={team.id} className='order-4 sm:order-1 flex flex-col items-center gap-3 justify-center'>
-              <img loading='lazy'
-                className='rounded-xl w-full max-w-[250px] h-[230px] object-cover'
+            <div
+              key={team.id}
+              className="order-4 sm:order-1 flex flex-col items-center gap-3 justify-center"
+            >
+              <img
+                loading="lazy"
+                className="rounded-xl w-full max-w-[250px] h-[230px] object-cover"
                 src={getimageURL(team.profilePic)}
                 alt={team.name}
               />
-              <div className='text-center'>
-                <h2 className='font-semibold text-nowrap'>{team.name}</h2>
-                <p className='text-gray-600 text-nowrap'>{team.position}</p>
+
+              <div className="text-center">
+                <h2 className="font-semibold text-nowrap">
+                  {team.name}
+                </h2>
+
+                <p className="text-gray-600 text-nowrap">
+                  {team.position}
+                </p>
               </div>
             </div>
           ))}
+
         </div>
       </div>
     </motion.div>
