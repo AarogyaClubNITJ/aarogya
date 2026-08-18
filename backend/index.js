@@ -18,7 +18,7 @@ const server = http.createServer(app);
 const io = socketModule.init(server);
 
 const corsOptions = {
-    origin: ['http://aarogya-vert.vercel.app', 'https://aarogya-vert.vercel.app','https://www.aarogyanitj.in','https://aarogyanitj.in', 'http://localhost:5173', 'http://localhost:5174'],
+    origin: ['http://aarogya-vert.vercel.app', 'https://aarogya-vert.vercel.app', 'http://localhost:5173', 'http://localhost:5174', 'https://www.aarogyanitj.in', 'https://aarogyanitj.in'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 };
