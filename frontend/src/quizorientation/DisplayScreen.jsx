@@ -7,11 +7,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const socket = io(apiUrl);
 
+let audioCtx = null;
+
+const initAudio = () => {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) {
+      audioCtx = new AudioContext();
+    }
+  }
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+};
+
 const playTop5Sound = () => {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  if (!AudioContext) return;
+  if (!audioCtx) return;
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume().catch(() => {});
+  }
   
-  const audioCtx = new AudioContext();
   const osc = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();
   
@@ -37,6 +52,10 @@ const DisplayScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const handleInteraction = () => initAudio();
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('keydown', handleInteraction);
+
     const adminToken = localStorage.getItem('adminToken');
     if (!adminToken) {
       navigate('/orientation/admin');
@@ -100,6 +119,8 @@ const DisplayScreen = () => {
     });
 
     return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
       socket.off('qr_updated');
       socket.off('leaderboard_update');
     };
@@ -217,6 +238,11 @@ const DisplayScreen = () => {
               ))}
             </AnimatePresence>
           )}
+        </div>
+        
+        {/* Audio hint */}
+        <div className="absolute bottom-4 left-4 text-gray-400 font-bold text-sm">
+          🔇 Click anywhere to ensure audio is enabled
         </div>
       </div>
     </div>
