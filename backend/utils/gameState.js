@@ -9,9 +9,9 @@ class GameState {
     const now = Date.now();
     this.validQRTokens.set(token, now);
 
-    // Cleanup old tokens (older than 120 seconds)
+    // Cleanup old tokens (older than 300 seconds)
     for (const [key, timestamp] of this.validQRTokens.entries()) {
-      if (now - timestamp > 120000) {
+      if (now - timestamp > 300000) {
         this.validQRTokens.delete(key);
       }
     }
@@ -30,11 +30,11 @@ class GameState {
     return latestToken;
   }
 
-  // Checks if a token is valid (exists and is less than 120s old)
+  // Checks if a token is valid (exists and is less than 300s old)
   isValidQRToken(token) {
     if (!this.validQRTokens.has(token)) return false;
     const timestamp = this.validQRTokens.get(token);
-    return (Date.now() - timestamp <= 120000);
+    return (Date.now() - timestamp <= 300000);
   }
 
   // Consumes a token so it cannot be used again
