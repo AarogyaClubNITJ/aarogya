@@ -1,6 +1,3 @@
-import { FaInstagram } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { IoMailOutline } from "react-icons/io5";
 import { FaGoogleDrive } from "react-icons/fa";
 import footer from '../assets/footer/image1.svg'
 import Button from './Button'
@@ -16,12 +13,11 @@ const Footer = () => {
             <div className="z-40 absolute sm:top-30 top-9 w-full justify-center flex">
                 <Button buttonColor="#406ED5" textColor="white" buttonText="JOIN US" redirect="https://linktr.ee/aarogya_nitj" />
             </div>
-            <div className="absolute bottom-0.5 w-full flex justify-center">
+            <div className="absolute bottom-0.5 left-0 w-auto pl-4 sm:pl-8">
                 <div className="flex gap-4">
-                    <a href="https://www.instagram.com/aarogya_nitj/" target="_blank"><FaInstagram size="1.5em" className="text-black cursor-pointer hover:text-gray-500" /></a>
-                    <a href="https://chat.whatsapp.com/L8Rt3ZXVCXAFBIfJu0rp7h" target="_blank"><FaWhatsapp size="1.5em" className="text-black cursor-pointer hover:text-gray-500" /></a>
-                    <a href="mailto:aarogyaclub@nitj.ac.in"><IoMailOutline size="1.5em" className="text-black cursor-pointer hover:text-gray-500" /></a>
-                    <a href="https://drive.google.com/drive/folders/1GRgUUkq7AJ3qC8rDfWL_FMFKWR6D4F03" target="_blank"><FaGoogleDrive size="1.5em" className="text-black cursor-pointer hover:text-gray-500" /></a>
+                    <a href="https://drive.google.com/drive/folders/1GRgUUkq7AJ3qC8rDfWL_FMFKWR6D4F03" target="_blank" rel="noreferrer" aria-label="Open Aarogya Google Drive" title="Google Drive">
+                        <FaGoogleDrive size="1.7em" className="text-[#4285F4] cursor-pointer hover:opacity-75" />
+                    </a>
                 </div>
             </div>
         </div>
