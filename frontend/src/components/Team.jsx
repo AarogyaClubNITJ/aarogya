@@ -175,12 +175,6 @@ const teamData = [
     profilePic: "ayushgupta.jpeg",
   },
   {
-    id: 8,
-    name: "Amrinder Singh",
-    position: "Design Executive",
-    profilePic: "amrindersingh.jpeg",
-  },
-  {
     id: 15,
     name: "Karan Gupta",
     position: "Design Executive",
@@ -191,6 +185,12 @@ const teamData = [
     name: "Aditi Mahajan",
     position: "Social Media Head",
     profilePic: "aditimahajan.jpg",
+  },
+  {
+    id: 8,
+    name: "Amrinder Singh",
+    position: "Social Media Head",
+    profilePic: "amrindersingh.jpeg",
   },
   {
     id: 24,
