@@ -105,13 +105,14 @@ const startQuiz = (req, res) => {
     currentIndex: 0,
     score: 0,
     totalTime: 0,
-    questionStartTime: Date.now()
+    questionStartTime: Date.now(),
+    lifelines: 3
   });
 
   const firstQuestion = { ...shuffledQuestions[0] };
   delete firstQuestion.answer;
 
-  res.json({ success: true, sessionToken, question: firstQuestion });
+  res.json({ success: true, sessionToken, question: firstQuestion, lifelines: 3 });
 };
 
 // Submit Answer
@@ -133,14 +134,29 @@ const submitAnswer = async (req, res) => {
       const nextQ = { ...session.questions[session.currentIndex] };
       delete nextQ.answer;
       session.questionStartTime = Date.now();
-      return res.json({ correct: true, nextQuestion: nextQ, score: session.score });
+      return res.json({ correct: true, nextQuestion: nextQ, score: session.score, lifelines: session.lifelines });
     } else {
       return await endGame(sessionToken, res, true);
     }
   } else {
     // Wrong
     session.totalTime += timeTaken;
-    return await endGame(sessionToken, res, false);
+    session.lifelines = (session.lifelines !== undefined ? session.lifelines : 3) - 1;
+
+
+    if (session.lifelines > 0) {
+      session.currentIndex += 1;
+      if (session.currentIndex < session.questions.length) {
+        const nextQ = { ...session.questions[session.currentIndex] };
+        delete nextQ.answer;
+        session.questionStartTime = Date.now();
+        return res.json({ correct: false, gameOver: false, nextQuestion: nextQ, score: session.score, lifelines: session.lifelines });
+      } else {
+        return await endGame(sessionToken, res, true);
+      }
+    } else {
+      return await endGame(sessionToken, res, false);
+    }
   }
 };
 

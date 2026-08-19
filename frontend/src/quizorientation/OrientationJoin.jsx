@@ -41,6 +41,7 @@ const OrientationJoin = () => {
       if (data.success) {
         sessionStorage.setItem('quizSession', data.sessionToken);
         sessionStorage.setItem('currentQuestion', JSON.stringify(data.question));
+        sessionStorage.setItem('lifelines', data.lifelines || 3);
         navigate('/orientation/play');
       } else {
         setError(data.error || 'Failed to start quiz');

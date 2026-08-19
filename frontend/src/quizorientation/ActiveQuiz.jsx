@@ -12,9 +12,12 @@ const ActiveQuiz = () => {
   
   const [timeLeft, setTimeLeft] = useState(TIME_LIMIT);
   const [score, setScore] = useState(0);
+  const [lifelines, setLifelines] = useState(3);
   const [gameOver, setGameOver] = useState(false);
+  const [gameOverReason, setGameOverReason] = useState('');
   const [completed, setCompleted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
   
   const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
   const timerRef = useRef(null);
@@ -24,6 +27,7 @@ const ActiveQuiz = () => {
     // Initial Load
     const token = sessionStorage.getItem('quizSession');
     const qStr = sessionStorage.getItem('currentQuestion');
+    const livesStr = sessionStorage.getItem('lifelines');
     
     if (!token || !qStr) {
       navigate('/orientation/join');
@@ -32,6 +36,7 @@ const ActiveQuiz = () => {
     
     setSessionToken(token);
     setQuestion(JSON.parse(qStr));
+    if (livesStr) setLifelines(Number(livesStr));
     startTimeRef.current = Date.now();
     startTimer();
 
@@ -78,6 +83,7 @@ const ActiveQuiz = () => {
   };
 
   const handleElimination = async (token) => {
+    setGameOverReason('Tab switch or window focus lost (Anti-cheat triggered).');
     setGameOver(true);
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
@@ -92,7 +98,8 @@ const ActiveQuiz = () => {
   };
 
   const submitAnswer = async (answerIndex) => {
-    if (loading || gameOver) return;
+    if (isSubmittingRef.current || gameOver) return;
+    isSubmittingRef.current = true;
     setLoading(true);
     clearInterval(timerRef.current);
     
@@ -114,17 +121,26 @@ const ActiveQuiz = () => {
       setScore(data.score);
 
       if (data.gameOver) {
+        setGameOverReason('You ran out of lives!');
         setGameOver(true);
         setCompleted(data.completed);
-      } else if (data.correct) {
-        setQuestion(data.nextQuestion);
-        sessionStorage.setItem('currentQuestion', JSON.stringify(data.nextQuestion));
-        startTimer();
+      } else {
+        if (data.lifelines !== undefined) {
+          setLifelines(data.lifelines);
+          sessionStorage.setItem('lifelines', data.lifelines);
+        }
+        if (data.nextQuestion) {
+          setQuestion(data.nextQuestion);
+          sessionStorage.setItem('currentQuestion', JSON.stringify(data.nextQuestion));
+          startTimer();
+        }
       }
     } catch (err) {
       console.error(err);
+      setGameOverReason('Network error or invalid session.');
       setGameOver(true);
     }
+    isSubmittingRef.current = false;
     setLoading(false);
   };
 
@@ -147,7 +163,7 @@ const ActiveQuiz = () => {
           ) : (
             <>
               <h1 className="text-4xl md:text-6xl font-black mb-4 uppercase tracking-widest text-red-600 drop-shadow-md">Game Over! 💀</h1>
-              <p className="text-xl text-black mb-6 font-bold">One wrong move (or tab switch) and you're out!</p>
+              <p className="text-xl text-black mb-6 font-bold">{gameOverReason || "You're out!"}</p>
             </>
           )}
           
@@ -180,6 +196,14 @@ const ActiveQuiz = () => {
         <div className="flex flex-col items-start px-2">
           <span className="text-black text-sm font-black uppercase tracking-widest">Score</span>
           <span className="text-4xl font-black text-[#4BC1E2] drop-shadow-sm">{score}</span>
+        </div>
+        <div className="flex flex-col items-center px-2">
+          <span className="text-black text-sm font-black uppercase tracking-widest">Lives</span>
+          <span className="text-3xl font-black text-red-500 flex gap-1 mt-1 drop-shadow-sm">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <span key={i} className={i < lifelines ? "opacity-100" : "opacity-20 grayscale"}>❤️</span>
+            ))}
+          </span>
         </div>
         <div className="flex flex-col items-end px-2">
           <span className="text-black text-sm font-black uppercase tracking-widest">Time</span>
