@@ -11,6 +11,7 @@ const OrientationJoin = () => {
     name: '',
     email: '',
     rollNo: '',
+    phoneNo: '',
     instaHandle: ''
   });
   const [error, setError] = useState('');
@@ -116,6 +117,15 @@ const OrientationJoin = () => {
               className="w-full px-4 py-3 rounded-xl bg-white border-2 border-black focus:outline-none focus:ring-4 focus:ring-[#4BC1E2]/40 font-bold text-black"
               placeholder="e.g. 12345678"
               value={formData.rollNo} onChange={handleChange} required
+            />
+          </div>
+          <div>
+            <label className="block text-black font-black mb-2 text-lg uppercase tracking-wide">Phone Number *</label>
+            <input 
+              type="tel" name="phoneNo"
+              className="w-full px-4 py-3 rounded-xl bg-white border-2 border-black focus:outline-none focus:ring-4 focus:ring-[#4BC1E2]/40 font-bold text-black"
+              placeholder="e.g. 9876543210"
+              value={formData.phoneNo} onChange={handleChange} required
             />
           </div>
           <div>
