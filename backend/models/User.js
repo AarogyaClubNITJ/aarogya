@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  rollNo: String,
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  rollNo: { type: String, required: true },
+  phoneNo: { type: String, required: true },
   instaHandle: String,
   score: { type: Number, default: 0 },
   timeTaken: { type: Number, default: 0 }, // in milliseconds

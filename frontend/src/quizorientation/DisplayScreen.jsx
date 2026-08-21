@@ -221,7 +221,7 @@ const DisplayScreen = () => {
                           {user.name}
                         </h3>
                         <p className="text-sm font-bold opacity-80">
-                          {user.rollNo} {user.instaHandle && `| @${user.instaHandle}`}
+                          {user.rollNo} {user.phoneNo && `| ${user.phoneNo}`} {user.instaHandle && `| @${user.instaHandle}`}
                         </p>
                       </div>
                     </div>
