@@ -98,7 +98,7 @@ const ResponsiveNavbar = ({ open, setOpen }) => {
                 buttonColor="#40916c"
                 textColor="white"
                 buttonText="JOIN GROUP"
-                redirect="https://chat.whatsapp.com/L8Rt3ZXVCXAFBIfJu0rp7h"
+                redirect="https://chat.whatsapp.com/IkzxkkqbSLPDLmw6SJC0ws?s=cl&p=a&ilr=1"
               />
             </div>
           </motion.div>
