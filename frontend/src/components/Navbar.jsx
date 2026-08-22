@@ -45,7 +45,7 @@ const Navbar = () => {
                     <a href="mailto:aarogyaclub@nitj.ac.in" aria-label="Email Aarogya" title="Email">
                         <IoMailOutline size="1.8em" className="text-[#EA4335] cursor-pointer hover:opacity-75" />
                     </a>
-                    <a href="https://chat.whatsapp.com/L8Rt3ZXVCXAFBIfJu0rp7h" target="_blank" rel="noreferrer" aria-label="Join Aarogya on WhatsApp" title="WhatsApp">
+                    <a href="https://chat.whatsapp.com/IkzxkkqbSLPDLmw6SJC0ws?s=cl&p=a&ilr=1" target="_blank" rel="noreferrer" aria-label="Join Aarogya on WhatsApp" title="WhatsApp">
                         <FaWhatsapp size="1.7em" className="text-[#25D366] cursor-pointer hover:opacity-75" />
                     </a>
                 </div>
